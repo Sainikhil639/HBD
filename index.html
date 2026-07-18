@@ -53,6 +53,7 @@
                 opacity: 1;
                 border-radius: 50%;
             }
+
             100% {
                 transform: translateY(-1000px) rotate(720deg);
                 opacity: 0;
@@ -87,10 +88,10 @@
         h1 {
             font-size: 2.3rem;
             flex-shrink: 0;
-            color: #ff4d4d;
+            color: #ff0000;
             letter-spacing: 4px;
             -webkit-text-stroke: 0px #ffffff;
-            text-shadow: 1px 1px 0px #972c2c, 2px 2px 0px #6a1f1f, 3px 3px 0px #2e0f0f, 4px 4px 0px #000000, 5px 5px 0px #000000, 6px 6px 0px #000000, 7px 7px 0px #000000, 8px 8px 15px rgba(255, 77, 77, 0.4);
+            text-shadow: 1px 1px 0px #000000, 2px 2px 0px #b015158c, 3px 3px 0px #000000, 6px 6px 0px #0302023b, 8px 8px 15px rgb(178 43 43 / 34%);
         }
 
         .tab-container {
@@ -105,7 +106,7 @@
         .tab-btn {
             background: none;
             border: none;
-            padding: 10px 15px;
+            padding: 10px 0px;
             font-size: 0.95rem;
             font-weight: 600;
             color: #a0a0a0;
@@ -229,6 +230,31 @@
             flex-shrink: 0;
             color: #b0b0b0;
         }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2.1rem;
+            }
+
+            .tab-btn {
+                font-size: 0.7rem;
+                padding: 8px 0px;
+            }
+
+            .content-section {
+                height: 200px;
+                font-size: 0.8rem;
+            }
+
+            .footer-box {
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -237,9 +263,11 @@
     <!-- Decorative Background Animation -->
     <ul class="particles">
         <li class="particle" style="left: 25%; width: 80px; height: 80px; animation-delay: 0s;"></li>
-        <li class="particle" style="left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s;"></li>
+        <li class="particle"
+            style="left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s;"></li>
         <li class="particle" style="left: 70%; width: 20px; height: 20px; animation-delay: 4s;"></li>
-        <li class="particle" style="left: 85%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s;"></li>
+        <li class="particle"
+            style="left: 85%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s;"></li>
     </ul>
 
     <div class="container">
@@ -255,44 +283,61 @@
 
         <!-- Tab 1: Birthday Wish -->
         <div id="wish" class="content-section active">
-            <p>Happiest birthday Anu..❤️ Nuvvu eeroju nijamga chala happy ga undalani korukuntunna. Even though we are miles apart and things are incredibly tough between us right now, my genuine wish for you is to see you smile safely and achieve everything you want in life.</p>
+            <p>Happiest birthday Anu..❤️ Nuvvu eeroju nijamga chala happy ga undalani korukuntunna. Even though we are
+                miles apart and things are incredibly tough between us right now, my genuine wish for you is to see you
+                smile safely and achieve everything you want in life.</p>
             <br>
-            <p>Ee year neeku anukunnavi anni jaragalani, you stay happy, peaceful, and safe ani manaspurthiga korukuntunna. Have a beautiful day ahead! 🎉😊</p>
+            <p>Ee year neeku anukunnavi anni jaragalani, you stay happy, peaceful, and safe ani manaspurthiga
+                korukuntunna. Have a beautiful day ahead! 🎉😊</p>
         </div>
 
         <!-- Tab 2: About Her -->
         <div id="about-you" class="content-section">
-            <p style="margin-bottom: 15px; color: #b0b0b0;">Today is all about celebrating the person you are. Even when things get dark, there are beautiful qualities about you that never change:</p>
+            <p style="margin-bottom: 15px; color: #b0b0b0;">Today is all about celebrating the person you are. Even when
+                things get dark, there are beautiful qualities about you that never change:</p>
             <ul class="reason-list">
-                <li><span class="highlight">Your Silent Strength:</span> Nuuvu chala strong. Managing everything while keeping things hidden inside isn't easy, but you always carry yourself with grace.</li>
-                <li><span class="highlight">Your Real Smile:</span> When you smile genuinely, it changes the whole vibe. I hope you never let the stress take that away.</li>
-                <li><span class="highlight">Your Goals:</span> Dream big, Anu. Life lo nuvvu chala high positions ki vellali. Keep your focus steady and don't let anything hold you back.</li>
+                <li><span class="highlight">Your Silent Strength:</span> Nuuvu chala strong. Managing everything while
+                    keeping things hidden inside isn't easy, but you always carry yourself with grace.</li>
+                <li><span class="highlight">Your Real Smile:</span> When you smile genuinely, it changes the whole vibe.
+                    I hope you never let the stress take that away.</li>
+                <li><span class="highlight">Your Goals:</span> Dream big, Anu. Life lo nuvvu chala high positions ki
+                    vellali. Keep your focus steady and don't let anything hold you back.</li>
             </ul>
         </div>
 
         <!-- Tab 3: Memories -->
         <div id="memories" class="content-section">
-            <p>Distance fields and state lines never truly mattered when we had that deep bond. I still hold onto the genuine, beautiful moments we shared—the endless calls, the shared laughter, and how we stayed close despite the physical gap.</p>
+            <p>Distance fields and state lines never truly mattered when we had that deep bond. I still hold onto the
+                genuine, beautiful moments we shared—the endless calls, the shared laughter, and how we stayed close
+                despite the physical gap.</p>
 
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-title">The Late Night Conversations</div>
-                    <p style="font-size: 0.95rem; color: #b0b0b0;">Talking for hours without realizing the time, sharing everything honestly.</p>
+                    <p style="color: #b0b0b0;">Talking for hours without realizing the time, sharing
+                        everything honestly.</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-title">The Shared Dreams</div>
-                    <p style="font-size: 0.95rem; color: #b0b0b0;">Thinking about how to manage everything, Planning how to handle the future and trying hard to build a steady bridge across boundaries.</p>
+                    <p style="color: #b0b0b0;">Thinking about how to manage everything, Planning how
+                        to handle the future and trying hard to build a steady bridge across boundaries.</p>
                 </div>
             </div>
 
-            <p>No matter where life takes us, those pure memories we created together will always remain the most beautiful part of my journey. Thank you for being such a wonderful part of my life. 🌸</p>
+            <p>No matter where life takes us, those pure memories we created together will always remain the most
+                beautiful part of my journey. Thank you for being such a wonderful part of my life. 🌸</p>
         </div>
 
         <!-- Tab 4: The Promise -->
         <div id="promise" class="content-section">
-            <p>I know I hurt you deeply, and I regret my actions every single day. I am absolutely not writing this to force you back, argue, or place pressure on you about the future or family expectations. <span class="highlight">I want to respect your space completely.</span> Ninnu ibbandi pettalani ledu.</p>
+            <p>I know I hurt you deeply, and I regret my actions every single day. I am absolutely not writing this to
+                force you back, argue, or place pressure on you about the future or family expectations. <span
+                    class="highlight">I want to respect your space completely.</span> Ninnu ibbandi pettalani ledu.</p>
             <br>
-            <p>I am focused on fixing myself, working seriously on my anger, and learning how to be a better, gentler human being. Take all the time you need to heal. Whenever you feel completely comfortable, even if it's just to talk normally like casual friends without any pressure of love, I will be here—patient, calm, and respectful. Your peace comes first.</p>
+            <p>I am focused on fixing myself, working seriously on my anger, and learning how to be a better, gentler
+                human being. Take all the time you need to heal. Whenever you feel completely comfortable, even if it's
+                just to talk normally like casual friends without any pressure of love, I will be here—patient, calm,
+                and respectful. Your peace comes first.</p>
         </div>
 
         <div class="footer-box">
