@@ -331,18 +331,27 @@
             color: #b0b0b0;
         }
 
-        /* Nani Text Design Fixes */
+         /* Nani Text Smooth Hardware Acceleration Fixes */
         .nani-text {
-            display: none;
             position: fixed;
-            top: 40%;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             font-size: 7.5rem;
             color: var(--accent-color);
-            text-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow), 0 0 60px var(--accent-glow);
-            opacity: 0.15;
+            text-shadow: 0 0 25px var(--accent-glow);
+            opacity: 0;
+            visibility: hidden;
             z-index: 0;
+            pointer-events: none;
+            white-space: nowrap;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+            will-change: transform, opacity; /* Shifts rendering execution directly to your GPU */
+        }
+
+        .nani-text.show {
+            opacity: 0.15;
+            visibility: visible;
         }
 
         @media screen and (max-width: 768px) {
@@ -512,7 +521,7 @@
 
         function changeMood(element) {
             const naniText = document.getElementById('nani-el');
-
+            
             // 1. Identify current mood based on body class
             let currentMood = 'default';
             if (document.body.classList.contains('mood-cool')) {
@@ -528,23 +537,23 @@
             if (currentMood === 'default') {
                 nextMood = 'cool';
                 nextText = 'Cool';
-                naniText.style.display = 'none';
+                naniText.classList.remove('show');
             } else if (currentMood === 'cool') {
                 nextMood = 'Vibe';
                 nextText = 'Vibe';
-                naniText.style.display = 'none';
+                naniText.classList.remove('show');
             } else if (currentMood === 'Vibe') {
                 nextMood = 'love';
                 nextText = 'Love';
-                naniText.style.display = 'block'; // Shows strictly when selecting Love
+                naniText.classList.add('show'); // Smooth transition toggle
             } else {
                 nextMood = 'default';
                 nextText = 'Mood';
-                naniText.style.display = 'none'; // Explicitly hides on loop reset
+                naniText.classList.remove('show');
             }
 
             // 3. Update the body class
-            document.body.className = '';
+            document.body.className = ''; 
             if (nextMood !== 'default') {
                 document.body.classList.add('mood-' + nextMood);
             }
